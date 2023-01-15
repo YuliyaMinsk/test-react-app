@@ -36,6 +36,7 @@ code {
   border-radius: 15px;
   border: none;
   width: 200px;
+  transition: all 0.3s ease-out;
 }
 
 .red {

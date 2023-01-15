@@ -1,9 +1,10 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, logRoles } from '@testing-library/react';
 import App from './App';
 
 // screen.debug();
 test('button has correct initial color (red)', () => {
-  render(<App />);
+  const { container } = render(<App />);
+  // logRoles(container); // cool to debug too
   const colorButton = screen.getByRole('button', { name: 'Change to blue' });
   expect(colorButton).toHaveClass('red');
 });
@@ -19,4 +20,3 @@ test('app has text header "React Testing library"', () => {
   const header = screen.getByText(/React Testing library/i);
   expect(header).toBeInTheDocument();
 });
-
