@@ -16,6 +16,10 @@ function App() {
       <button className={`button ${buttonColor}`} onClick={changeColor}>
         Change to {newButtonColor}
       </button>
+      <div className="checkbox-container">
+        <input type="checkbox" />
+        Add option
+      </div>
     </div>
   );
 }

@@ -1,4 +1,6 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
@@ -45,4 +47,8 @@ code {
 
 .blue {
   background-color: blue;
+}
+
+.checkbox-container {
+  margin-top: 20px;
 }
