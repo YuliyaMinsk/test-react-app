@@ -6,7 +6,6 @@ function App() {
   const [buttonStatus, setButtonStatus] = useState(false);
 
   const newButtonColor = buttonColor === 'red' ? 'blue' : 'red';
-  const isDisable = buttonStatus ? 'disable' : '';
 
   const changeColor = () => {
     setButtonColor(newButtonColor);
@@ -20,7 +19,7 @@ function App() {
     <div className="main-container">
       <h1 className="header">React Testing library</h1>
       <button
-        className={`button ${buttonColor} ${isDisable}`}
+        className={`button ${buttonStatus ? 'disable' : buttonColor}`}
         disabled={buttonStatus}
         onClick={changeColor}
       >
