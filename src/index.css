@@ -49,6 +49,10 @@ code {
   background-color: blue;
 }
 
+.disable {
+  background-color: gray;
+}
+
 .checkbox-container {
   margin-top: 20px;
 }

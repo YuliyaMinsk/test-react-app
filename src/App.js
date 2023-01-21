@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -7,6 +6,7 @@ function App() {
   const [buttonStatus, setButtonStatus] = useState(false);
 
   const newButtonColor = buttonColor === 'red' ? 'blue' : 'red';
+  const isDisable = buttonStatus ? 'disable' : '';
 
   const changeColor = () => {
     setButtonColor(newButtonColor);
@@ -20,7 +20,7 @@ function App() {
     <div className="main-container">
       <h1 className="header">React Testing library</h1>
       <button
-        className={`button ${buttonColor}`}
+        className={`button ${buttonColor} ${isDisable}`}
         disabled={buttonStatus}
         onClick={changeColor}
       >
