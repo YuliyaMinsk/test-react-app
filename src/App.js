@@ -27,8 +27,12 @@ function App() {
         Change to {newButtonColor}
       </button>
       <div className="checkbox-container">
-        <input type="checkbox" onClick={changeStatus} />
-        Disable button
+        <input
+          id="disable-button-checkbox"
+          type="checkbox"
+          onClick={changeStatus}
+        />
+        <label htmlFor="disable-button-checkbox">Disable button</label>
       </div>
     </div>
   );
