@@ -1,5 +1,6 @@
 import { render, screen, fireEvent, logRoles } from '@testing-library/react';
 import App from './App';
+import { camelCaseColorWithSpace } from './App';
 
 // screen.debug();
 test('button has correct initial color (red)', () => {
@@ -59,4 +60,21 @@ test('if checkbox is checked, button should be in gray', () => {
   expect(colorButton).toBeEnabled();
   fireEvent.click(colorButton);
   expect(colorButton).toHaveTextContent('Change to red');
+});
+
+describe('check function camelCaseColorWithSpace', () => {
+  test('check work with none argument', () => {
+    expect(camelCaseColorWithSpace('')).toBe('');
+  });
+  test('check work with only one capital letter', () => {
+    expect(camelCaseColorWithSpace('Red')).toBe('Red');
+  });
+  test('check work with two capital letters', () => {
+    expect(camelCaseColorWithSpace('MidnightBlue')).toBe('Midnight Blue');
+  });
+  test('check work with multiple capital letters', () => {
+    expect(camelCaseColorWithSpace('MediumVioletRed')).toBe(
+      'Medium Violet Red'
+    );
+  });
 });

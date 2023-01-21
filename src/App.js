@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import './App.css';
 
+export function camelCaseColorWithSpace(colorName) {
+  return colorName.split(/(?=[A-Z])/).join(' ');
+}
+
 function App() {
   const [buttonColor, setButtonColor] = useState('red');
   const [buttonStatus, setButtonStatus] = useState(false);
