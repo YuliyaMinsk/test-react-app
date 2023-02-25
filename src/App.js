@@ -1,15 +1,19 @@
 import { useState } from 'react';
 import './App.css';
 
+export function camelCaseColorWithDash(colorName) {
+  return colorName.split(/(?=[A-Z])/).join('-').toLowerCase();
+}
+
 export function camelCaseColorWithSpace(colorName) {
   return colorName.split(/(?=[A-Z])/).join(' ');
 }
 
 function App() {
-  const [buttonColor, setButtonColor] = useState('red');
+  const [buttonColor, setButtonColor] = useState('MediumVioletRed');
   const [buttonStatus, setButtonStatus] = useState(false);
 
-  const newButtonColor = buttonColor === 'red' ? 'blue' : 'red';
+  const newButtonColor = buttonColor === 'MediumVioletRed' ? 'MidnightBlue' : 'MediumVioletRed';
 
   const changeColor = () => {
     setButtonColor(newButtonColor);
@@ -23,11 +27,11 @@ function App() {
     <div className="main-container">
       <h1 className="header">React Testing library</h1>
       <button
-        className={`button ${buttonStatus ? 'disable' : buttonColor}`}
+        className={`button ${buttonStatus ? 'disable' : camelCaseColorWithDash(buttonColor)}`}
         disabled={buttonStatus}
         onClick={changeColor}
       >
-        Change to {newButtonColor}
+        Change to {camelCaseColorWithSpace(newButtonColor)}
       </button>
       <div className="checkbox-container">
         <input
